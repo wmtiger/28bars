@@ -1,0 +1,15 @@
+{
+	"groups": [
+		{
+			"keys": "loading_fui",
+			"name": "loading"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/loading/loading.fui",
+			"type": "bin",
+			"name": "loading_fui"
+		}
+	]
+}

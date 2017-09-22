@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720">
+  <displayList>
+    <image id="n0_kjo6" name="n0" src="kjo60" xy="0,0" locked="true"/>
+    <image id="n5_kjo6" name="n5" src="kjo6i" xy="0,19" locked="true"/>
+    <component id="n4_kjo6" name="n4" src="kjo6h" xy="280,0" locked="true"/>
+    <component id="n2_kjo6" name="betBar" src="kjo63" xy="280,601"/>
+    <component id="n3_kjo6" name="n3" src="kjo619" xy="490,150"/>
+    <component id="n6_kjo6" name="n6" src="kjo616" xy="511,198"/>
+    <image id="n7_kjo6" name="n7" src="kjo6n" xy="10,631"/>
+    <image id="n10_kjo6" name="n10" src="kjo6x" xy="1106,10"/>
+    <image id="n11_kjo6" name="n11" src="kjo6v" xy="10,10"/>
+    <image id="n12_kjo6" name="n12" src="kjo6t" xy="100,10"/>
+    <image id="n13_kjo6" name="n13" src="kjo6r" xy="1196,10"/>
+    <image id="n14_kjo6" name="n14" src="kjo6p" xy="100,631"/>
+    <movieclip id="n15_kjo6" name="lightRight" src="kjo614" xy="790,243" playing="false"/>
+    <movieclip id="n16_kjo6" name="lightLeft" src="kjo614" xy="488,244" scale="-1,1" playing="false"/>
+    <movieclip id="n17_kjo6" name="lightMiddle" src="kjo615" xy="366,374" playing="false"/>
+    <component id="n18_kjo6" name="myHead" src="kjo617" xy="1008,630"/>
+    <component id="n19_kjo6" name="player0" src="kjo618" xy="15,110"/>
+    <component id="n20_kjo6" name="player1" src="kjo618" xy="15,235"/>
+    <component id="n21_kjo6" name="player2" src="kjo618" xy="15,360"/>
+    <component id="n22_kjo6" name="player3" src="kjo618" xy="15,485"/>
+    <component id="n23_kjo6" name="player4" src="kjo618" xy="1171,110"/>
+    <component id="n24_kjo6" name="player5" src="kjo618" xy="1171,235"/>
+    <component id="n25_kjo6" name="player6" src="kjo618" xy="1171,360"/>
+    <component id="n26_kjo6" name="player7" src="kjo618" xy="1171,485"/>
+    <image id="n28_kjo6" name="dealHead" src="kjo613" xy="300,20" size="80,80" aspect="true"/>
+    <text id="n29_kjo6" name="dealerName" xy="385,24" size="160,34" font="微软雅黑" fontSize="22" color="#ffffff" vAlign="middle" autoSize="none" text="疯狂的下注"/>
+    <text id="n30_kjo6" name="dealerMoney" xy="385,62" size="160,34" font="微软雅黑" fontSize="22" color="#ffcc66" vAlign="middle" autoSize="none" text="213.5万"/>
+    <component id="n32_kjo6" name="mj0" src="kjo62b" xy="300,240" size="64,90"/>
+    <component id="n31_kjo6" name="mj1" src="kjo62b" xy="365,240"/>
+    <component id="n36_kjo6" name="mj2" src="kjo62b" xy="575,340"/>
+    <component id="n35_kjo6" name="mj3" src="kjo62b" xy="640,340"/>
+    <component id="n38_kjo6" name="mj4" src="kjo62b" xy="845,240"/>
+    <component id="n37_kjo6" name="mj5" src="kjo62b" xy="910,240"/>
+    <component id="n40_kjo6" name="mj6" src="kjo62b" xy="575,15"/>
+    <component id="n39_kjo6" name="mj7" src="kjo62b" xy="640,15"/>
+    <movieclip id="n41_kjo6" name="mv0" src="kjo62c" xy="296,231" playing="false"/>
+    <movieclip id="n42_kjo6" name="mv1" src="kjo62c" xy="360,231" playing="false"/>
+    <movieclip id="n43_kjo6" name="mv2" src="kjo62c" xy="570,331" playing="false"/>
+    <movieclip id="n44_kjo6" name="mv3" src="kjo62c" xy="636,331" playing="false"/>
+    <movieclip id="n45_kjo6" name="mv4" src="kjo62c" xy="840,231" playing="false"/>
+    <movieclip id="n46_kjo6" name="mv5" src="kjo62c" xy="906,231" playing="false"/>
+    <movieclip id="n47_kjo6" name="mv6" src="kjo62c" xy="570,6" playing="false"/>
+    <movieclip id="n48_kjo6" name="mv7" src="kjo62c" xy="636,6" playing="false"/>
+    <text id="n50_kjo6" name="pint0" xy="295,245" size="140,56" font="ui://e3t3gyefkjo62u" fontSize="12" align="center" vAlign="middle" autoSize="none" text="豹子"/>
+    <text id="n51_kjo6" name="pint1" xy="570,345" size="140,56" font="ui://e3t3gyefkjo62u" fontSize="12" align="center" vAlign="middle" autoSize="none" text="豹子"/>
+    <text id="n52_kjo6" name="pint2" xy="840,245" size="140,56" font="ui://e3t3gyefkjo62u" fontSize="12" align="center" vAlign="middle" autoSize="none" text="豹子"/>
+    <text id="n53_kjo6" name="pint3" xy="570,20" size="140,56" font="ui://e3t3gyefkjo62u" fontSize="12" align="center" vAlign="middle" autoSize="none" text="豹子"/>
+  </displayList>
+</component>

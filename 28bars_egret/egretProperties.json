@@ -1,0 +1,48 @@
+{
+  "native": {
+    "path_ignore": []
+  },
+  "publish": {
+    "web": 0,
+    "native": 1,
+    "path": "bin-release"
+  },
+  "egret_version": "5.0.6",
+  "template": {},
+  "modules": [{
+      "name": "egret"
+    },
+    {
+      "name": "game"
+    },
+    {
+      "name": "res"
+    },
+    {
+      "name": "tween"
+    },
+    {
+      "name": "socket"
+    },
+    {
+      "name": "promise",
+      "path": "./promise"
+    },
+    {
+      "name": "protobuf",
+      "path": "../../myegretlibs/protobuf"
+    },
+    {
+      "name": "puremvc",
+      "path": "../../myegretlibs/puremvc"
+    },
+    {
+      "name": "fairygui",
+      "path": "../../myegretlibs/fairygui"
+    },
+    {
+      "name": "rawinflate",
+      "path": "../../myegretlibs/rawinflate"
+    }
+  ]
+}

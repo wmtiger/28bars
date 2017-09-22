@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="720,119">
+  <displayList>
+    <image id="n0_kjo6" name="n0" src="kjo62" xy="1,0" locked="true"/>
+    <image id="n1_kjo6" name="n1" src="kjo62" xy="360,0" locked="true" flip="hz"/>
+    <component id="n2_kjo6" name="chip0" src="kjo6a" xy="20,12"/>
+    <component id="n3_kjo6" name="chip1" src="kjo6b" xy="136,12"/>
+    <component id="n4_kjo6" name="chip2" src="kjo6c" xy="252,12"/>
+    <component id="n5_kjo6" name="chip3" src="kjo6d" xy="368,12"/>
+    <component id="n6_kjo6" name="chip4" src="kjo6e" xy="484,12"/>
+    <component id="n7_kjo6" name="rebuy" src="kjo6f" xy="600,12"/>
+    <image id="n8_kjo6" name="selected" src="kjo62d" xy="5,-3"/>
+  </displayList>
+</component>

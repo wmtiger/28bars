@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="94,112">
+  <displayList>
+    <image id="n19_kjo6" name="n19" src="kjo611" xy="0,0"/>
+    <image id="n20_kjo6" name="n20" src="kjo613" xy="7,4" size="80,80" aspect="true"/>
+    <text id="n21_kjo6" name="n21" xy="0,85" size="94,25" font="微软雅黑" fontSize="16" color="#ffcc33" align="center" vAlign="middle" autoSize="none" text="356.4万"/>
+    <component id="n22_kjo6" name="btnSit" src="kjo62x" xy="7,21"/>
+  </displayList>
+</component>
