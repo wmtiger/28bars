@@ -14,6 +14,7 @@ var mvc;
         cst.GO_TUITONG = "GO_TUITONG";
         cst.GO_LUCKY_PK_SIZE = "GO_LUCKY_PK_SIZE";
         cst.GO_FIGHT_GRID = "GO_FIGHT_GRID";
+        cst.GO_28_BAR = "GO_28_BAR";
         return cst;
     }());
     mvc.cst = cst;

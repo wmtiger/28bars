@@ -110,10 +110,11 @@ class Main extends egret.DisplayObjectContainer {
         // }
         // else mvc.send(mvc.cst.GO_HALL);
 
-        mvc.send(mvc.cst.GO_TUITONG)
+        // mvc.send(mvc.cst.GO_TUITONG)
         // mvc.send(mvc.cst.GO_LUCKY_PK_SIZE)
         // mvc.send(mvc.cst.GO_HALL);
         // mvc.send(mvc.cst.GO_FIGHT_GRID);
+        mvc.send(mvc.cst.GO_28_BAR);
 
         this.parent.removeChild(this);
 

@@ -71,19 +71,19 @@
     <image id="kjo61v" name="majiang_frame_004.png" path="/mj/"/>
     <image id="kjo61w" name="majiang_frame_005.png" path="/mj/"/>
     <image id="kjo61x" name="majiang_frame_006.png" path="/mj/"/>
-    <image id="kjo61y" name="majiang_card_1.png" path="/mj/"/>
-    <image id="kjo61z" name="majiang_card_2.png" path="/mj/"/>
-    <image id="kjo620" name="majiang_card_3.png" path="/mj/"/>
-    <image id="kjo621" name="majiang_card_4.png" path="/mj/"/>
-    <image id="kjo622" name="majiang_card_5.png" path="/mj/"/>
-    <image id="kjo623" name="majiang_card_6.png" path="/mj/"/>
-    <image id="kjo624" name="majiang_card_7.png" path="/mj/"/>
-    <image id="kjo625" name="majiang_card_8.png" path="/mj/"/>
-    <image id="kjo626" name="majiang_card_9.png" path="/mj/"/>
-    <image id="kjo627" name="majiang_card_10.png" path="/mj/"/>
-    <image id="kjo628" name="majiang_card_20.png" path="/mj/"/>
-    <image id="kjo629" name="majiang_card_30.png" path="/mj/"/>
-    <image id="kjo62a" name="majiang_card_bg.png" path="/mj/"/>
+    <image id="kjo61y" name="majiang_card_1.png" path="/mj/" exported="true"/>
+    <image id="kjo61z" name="majiang_card_2.png" path="/mj/" exported="true"/>
+    <image id="kjo620" name="majiang_card_3.png" path="/mj/" exported="true"/>
+    <image id="kjo621" name="majiang_card_4.png" path="/mj/" exported="true"/>
+    <image id="kjo622" name="majiang_card_5.png" path="/mj/" exported="true"/>
+    <image id="kjo623" name="majiang_card_6.png" path="/mj/" exported="true"/>
+    <image id="kjo624" name="majiang_card_7.png" path="/mj/" exported="true"/>
+    <image id="kjo625" name="majiang_card_8.png" path="/mj/" exported="true"/>
+    <image id="kjo626" name="majiang_card_9.png" path="/mj/" exported="true"/>
+    <image id="kjo627" name="majiang_card_10.png" path="/mj/" exported="true"/>
+    <image id="kjo628" name="majiang_card_20.png" path="/mj/" exported="true"/>
+    <image id="kjo629" name="majiang_card_30.png" path="/mj/" exported="true"/>
+    <image id="kjo62a" name="majiang_card_bg.png" path="/mj/" exported="true"/>
     <component id="kjo62b" name="MjTile.xml" path="/mj/"/>
     <movieclip id="kjo62c" name="FlopMjMv.jta" path="/mj/" exported="true"/>
     <image id="kjo62d" name="texasbattle_bet_chip_button_light.png" path="/table/"/>
@@ -107,6 +107,8 @@
     <image id="kjo62w" name="majiang_full_lose.png" path="/table/"/>
     <component id="kjo62x" name="BtnSit.xml" path="/table/"/>
     <component id="kjo62y" name="BetChip.xml" path="/table/" exported="true"/>
+    <component id="dbmm30" name="BetAreaLR.xml" path="/table/"/>
+    <component id="dbmm31" name="betAreaMiddle.xml" path="/table/"/>
   </resources>
-  <publish name="twoeightbar_pkg" path="E:\development\proj\mywork\28bars\28bars_egret\resource\assets\teb"/>
+  <publish name="twoeightbar_pkg" path="E:\development\proj\mywork\28bars\28bars_egret\resource\assets\teb" excluded="kjo60,kjo6i"/>
 </packageDescription>

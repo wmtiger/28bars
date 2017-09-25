@@ -16,9 +16,10 @@ var cfg;
         // mvc.regCmd(mvc.cst.GO_LOGIN, ssp.LoginStartup);
         // mvc.regCmd(mvc.cst.GO_HALL,             ssp.HallStartup);
         // mvc.regCmd(mvc.cst.GO_SLOT,             ssp.SlotStartup);
-        mvc.regCmd(mvc.cst.GO_TUITONG, tuitong.TuitongStartup);
+        // mvc.regCmd(mvc.cst.GO_TUITONG, tuitong.TuitongStartup);
         // mvc.regCmd(mvc.cst.GO_LUCKY_PK_SIZE, lps.LuckyPkSizeStartup);
         // mvc.regCmd(mvc.cst.GO_FIGHT_GRID, fg.FightGridStartup);
+        mvc.regCmd(mvc.cst.GO_28_BAR, twoeightbar.TwoEightBarStartup);
     }
     cfg.registerGoCommands = registerGoCommands;
     function registerNetActions() {

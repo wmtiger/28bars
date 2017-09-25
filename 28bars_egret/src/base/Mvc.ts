@@ -13,6 +13,7 @@ module mvc {
         static GO_TUITONG:string = "GO_TUITONG";
         static GO_LUCKY_PK_SIZE:string = "GO_LUCKY_PK_SIZE";
         static GO_FIGHT_GRID:string = "GO_FIGHT_GRID";
+        static GO_28_BAR:string = "GO_28_BAR";
 
         
     }

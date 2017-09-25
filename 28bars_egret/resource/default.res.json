@@ -3,6 +3,10 @@
 		{
 			"keys": "loading_fui",
 			"name": "loading"
+		},
+		{
+			"keys": "twoeightbar_pkg_fui,twoeightbar_pkg@atlas0_png,majiang_desk_bg_png,majiang_bet_area_bg_png",
+			"name": "teb"
 		}
 	],
 	"resources": [
@@ -10,6 +14,26 @@
 			"url": "assets/loading/loading.fui",
 			"type": "bin",
 			"name": "loading_fui"
+		},
+		{
+			"url": "assets/teb/twoeightbar_pkg.fui",
+			"type": "bin",
+			"name": "twoeightbar_pkg_fui"
+		},
+		{
+			"url": "assets/teb/twoeightbar_pkg@atlas0.png",
+			"type": "image",
+			"name": "twoeightbar_pkg@atlas0_png"
+		},
+		{
+			"url": "assets/teb/majiang_desk_bg.png",
+			"type": "image",
+			"name": "majiang_desk_bg_png"
+		},
+		{
+			"url": "assets/teb/majiang_bet_area_bg.png",
+			"type": "image",
+			"name": "majiang_bet_area_bg_png"
 		}
 	]
 }
