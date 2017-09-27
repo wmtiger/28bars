@@ -6,6 +6,7 @@ var twoeightbar;
     var BetChip = (function () {
         function BetChip() {
             this.from = -1;
+            this.targetId = -1;
             this.view = fairygui.UIPackage.createObject("twoeightbar_pkg", "BetChip").asCom;
             this.view.touchable = false;
         }

@@ -73,6 +73,7 @@ var twoeightbar;
         __extends(TwoEightBarScreen, _super);
         function TwoEightBarScreen() {
             var _this = _super.call(this, TwoEightBarScreen.NAME) || this;
+            _this.rewardPoolValue = 0;
             _this.mySelectedBet = 0; // 我选中的下注尺度
             _this.crtState = 4;
             _this._updateInterval = -1;
@@ -91,6 +92,7 @@ var twoeightbar;
         };
         TwoEightBarScreen.prototype.onUpdate = function () {
             this.flushBetTime();
+            this.flushRewardPool();
         };
         TwoEightBarScreen.prototype.flushBetTime = function () {
             if (this.crtState == STATE.BET_TIME && this.betTime) {
@@ -111,20 +113,25 @@ var twoeightbar;
             if (betNum > 0) {
                 if (from >= 0 && from < 8) {
                     // sit中玩家
+                    var player = this.players[from];
+                    this.flyBet(player.x + 50, player.y + 50, from, betNum, targetId);
                 }
                 else if (from == 8) {
                     // mine
-                    this.flyBet(this.myHead.x + 20, this.myHead.y + 20, targetId);
+                    this.flyBet(this.myHead.x + 50, this.myHead.y + 50, from, betNum, targetId);
                 }
                 else if (from >= 9) {
                     // other
+                    this.flyBet(this.btnOther.x + 30, this.btnOther.y + 30, from, betNum, targetId);
                 }
+                this.rewardPoolValue += this.getBetNum(betNum);
             }
             else {
                 // rebuy
+                this.clearChipByFrom(from);
             }
         };
-        TwoEightBarScreen.prototype.flyBet = function (x, y, targetId) {
+        TwoEightBarScreen.prototype.flyBet = function (x, y, from, num, targetId) {
             var tox, toy;
             if (targetId == 0) {
                 //中
@@ -141,12 +148,50 @@ var twoeightbar;
                 tox = 870 + 210 * Math.random();
                 toy = 330 + 150 * Math.random();
             }
-            var chip = new twoeightbar.BetChip();
-            this.view.addChild(chip.view);
-            this.betChips.push(chip);
-            egret.Tween.get(chip.view)
-                .set({ x: x, y: y, scaleX: 0.3, scaleY: 0.3 })
-                .to({ x: tox, y: toy, scaleX: 1, scaleY: 1 }, 300, egret.Ease.sineOut);
+            for (var i = 0; i < num; i++) {
+                var chip = new twoeightbar.BetChip();
+                chip.from = from;
+                chip.targetId = targetId;
+                this.view.addChild(chip.view);
+                this.betChips.push(chip);
+                egret.Tween.get(chip.view)
+                    .set({ x: x, y: y, scaleX: 0.3, scaleY: 0.3 })
+                    .to({ x: tox, y: toy, scaleX: 1, scaleY: 1 }, 300, egret.Ease.sineOut);
+            }
+        };
+        TwoEightBarScreen.prototype.clearChipByFrom = function (from) {
+            var len = this.betChips.length;
+            for (var i = len - 1; i >= 0; i--) {
+                var chip = this.betChips[i];
+                if (chip.from === from) {
+                    var dc = this.betChips.splice(i, 1)[0];
+                    dc.view.removeFromParent();
+                }
+            }
+        };
+        TwoEightBarScreen.prototype.flushRewardPool = function () {
+            if (STATE.BET_TIME == this.crtState) {
+                this.rewardPool.getChild('txt').text = '' + this.rewardPoolValue;
+            }
+        };
+        TwoEightBarScreen.prototype.getBetNum = function (bet) {
+            var num = 0;
+            if (bet == 1) {
+                num = 100;
+            }
+            else if (bet == 2) {
+                num = 1000;
+            }
+            else if (bet == 3) {
+                num = 10000;
+            }
+            else if (bet == 4) {
+                num = 100000;
+            }
+            else if (bet == 5) {
+                num = 1000000;
+            }
+            return num;
         };
         TwoEightBarScreen.prototype.dealCard = function () {
             var _this = this;
@@ -208,6 +253,7 @@ var twoeightbar;
                 mj2.addChild(img);
                 setTimeout(function () {
                     _this.showPoint(idx);
+                    _this.pointShowOver();
                 }, 200);
             });
             mv2.playing = true;
@@ -227,6 +273,90 @@ var twoeightbar;
             }
         };
         TwoEightBarScreen.prototype.settle = function () {
+            var _this = this;
+            // 依次判断庄家是否胜利，相同点数，庄家赢
+            var dealer = this.getCard(3);
+            var card0 = this.getCard(0);
+            var card1 = this.getCard(1);
+            var card2 = this.getCard(2);
+            var dealerIdx = getTwoEightBarProxy().getBipaiIdx(dealer);
+            var card0Idx = getTwoEightBarProxy().getBipaiIdx(card0);
+            var card1Idx = getTwoEightBarProxy().getBipaiIdx(card1);
+            var card2Idx = getTwoEightBarProxy().getBipaiIdx(card2);
+            if (dealerIdx <= card0Idx) {
+                this.moneyFly(0, 0);
+            }
+            else {
+                this.moneyFly(0, 1);
+            }
+            if (dealerIdx <= card1Idx) {
+                this.moneyFly(1, 0);
+            }
+            else {
+                this.moneyFly(1, 1);
+            }
+            if (dealerIdx <= card2Idx) {
+                this.moneyFly(2, 0);
+            }
+            else {
+                this.moneyFly(2, 1);
+            }
+            if (this.betChips.length <= 0) {
+                setTimeout(function () {
+                    _this.setState(STATE.RESET);
+                }, 1000);
+            }
+        };
+        TwoEightBarScreen.prototype.getCard = function (idx) {
+            idx *= 2;
+            var mjd = this.cards[idx];
+            var mjd2 = this.cards[idx + 1];
+            if (mjd.num >= mjd2.num) {
+                return mjd.num + ',' + mjd2.num;
+            }
+            return mjd2.num + ',' + mjd.num;
+        };
+        /** from等于之前的targetId; to=0为庄家,to>0则从chip中的from返回 */
+        TwoEightBarScreen.prototype.moneyFly = function (from, to) {
+            var _this = this;
+            var tox, toy;
+            if (to == 0) {
+                tox = this.dealHead.x + 50;
+                toy = this.dealHead.y + 50;
+            }
+            var len = this.betChips.length;
+            var _loop_3 = function () {
+                chip = this_2.betChips[i];
+                if (chip.targetId === from) {
+                    var fc_1 = this_2.betChips.splice(i, 1)[0];
+                    if (to > 0) {
+                        if (fc_1.from >= 0 && fc_1.from < 8) {
+                            var player = this_2.players[from];
+                            tox = player.x + 50;
+                            toy = player.y + 50;
+                        }
+                        else if (fc_1.from == 8) {
+                            tox = this_2.myHead.x + 50;
+                            toy = this_2.myHead.y + 50;
+                        }
+                        else if (fc_1.from == 9) {
+                            tox = this_2.btnOther.x + 30;
+                            toy = this_2.btnOther.y + 30;
+                        }
+                    }
+                    egret.Tween.get(fc_1.view).to({ x: tox, y: toy, scaleX: 0.3, scaleY: 0.3 }, 500, egret.Ease.sineOut)
+                        .call(function () {
+                        fc_1.view.removeFromParent();
+                        setTimeout(function () {
+                            _this.setState(STATE.RESET);
+                        }, 1000);
+                    });
+                }
+            };
+            var this_2 = this, chip;
+            for (var i = len - 1; i >= 0; i--) {
+                _loop_3();
+            }
         };
         TwoEightBarScreen.prototype.setState = function (state) {
             this.crtState = state;
@@ -266,6 +396,7 @@ var twoeightbar;
             this.betChip3 = this.getChild('betBar.chip3').asButton;
             this.betChip4 = this.getChild('betBar.chip4').asButton;
             this.betRebuy = this.getChild('betBar.rebuy').asButton;
+            this.betSelected = this.getChild('betBar.selected').asCom;
             this.mvLightLeft = this.getChild('lightLeft').asMovieClip;
             this.mvLightMiddle = this.getChild('lightMiddle').asMovieClip;
             this.mvLightRight = this.getChild('lightRight').asMovieClip;
@@ -274,7 +405,9 @@ var twoeightbar;
             this.betAreaRight = this.getChild('betAreaRight').asCom;
             this.betTime = this.getChild('betTime').asCom;
             this.rewardPool = this.getChild('rewardPool').asCom;
+            this.dealHead = this.getChild('dealHead').asImage;
             this.myHead = this.getChild('myHead').asCom;
+            this.btnOther = this.getChild('btnOther').asButton;
             this.mjViewXYs = [];
             this.mjViews = [];
             for (var i = 0; i < 8; i++) {
@@ -313,6 +446,7 @@ var twoeightbar;
                 mjmv.width = 36;
                 mjmv.height = 53;
                 mjmv.visible = true;
+                mjmv.playing = false;
                 mjmv.x = 574 + Math.floor(i / 2) * 31;
                 mjmv.y = 258 + (i % 2) * 12;
             }
@@ -328,40 +462,56 @@ var twoeightbar;
                 element.view.removeFromParent();
             }
             this.betChips = [];
+            this._mjDealCnt = 0;
+            this._pointOverCnt = 0;
+            this.rewardPoolValue = 0;
             this.start();
         };
         TwoEightBarScreen.prototype.start = function () {
-            this.betTimeStamp = utils.getCrtTimeStamp() + 1000 * 3;
+            this.betTimeStamp = utils.getCrtTimeStamp() + 1000 * 8;
             this.setState(STATE.BET_TIME);
         };
         TwoEightBarScreen.prototype.onClick = function (target) {
             switch (target) {
                 case this.betChip0:
                     this.mySelectedBet = 0;
+                    this.betSelected.x = 5;
                     break;
                 case this.betChip1:
                     this.mySelectedBet = 1;
+                    this.betSelected.x = 121;
                     break;
                 case this.betChip2:
                     this.mySelectedBet = 2;
+                    this.betSelected.x = 237;
                     break;
                 case this.betChip3:
                     this.mySelectedBet = 3;
+                    this.betSelected.x = 353;
                     break;
                 case this.betChip4:
                     this.mySelectedBet = 4;
+                    this.betSelected.x = 469;
                     break;
                 case this.betRebuy:
-                    this.doBet(8, -1);
+                    if (STATE.BET_TIME == this.crtState) {
+                        this.doBet(8, -1);
+                    }
                     break;
                 case this.betAreaLeft:
-                    this.doBet(8, this.mySelectedBet + 1, 0);
+                    if (STATE.BET_TIME == this.crtState) {
+                        this.doBet(8, this.mySelectedBet + 1, 0);
+                    }
                     break;
                 case this.betAreaMiddle:
-                    this.doBet(8, this.mySelectedBet + 1, 1);
+                    if (STATE.BET_TIME == this.crtState) {
+                        this.doBet(8, this.mySelectedBet + 1, 1);
+                    }
                     break;
                 case this.betAreaRight:
-                    this.doBet(8, this.mySelectedBet + 1, 2);
+                    if (STATE.BET_TIME == this.crtState) {
+                        this.doBet(8, this.mySelectedBet + 1, 2);
+                    }
                     break;
             }
         };

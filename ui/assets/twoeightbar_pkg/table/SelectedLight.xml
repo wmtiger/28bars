@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="128,128">
+  <displayList>
+    <image id="n8_kjo6" name="selected" src="kjo62d" xy="64,64" pivot="0.5,0.5" anchor="true"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="2147483647">
+    <item time="0" type="Rotation" target="n8_kjo6" tween="true" startValue="0" endValue="360" duration="24" ease="Linear" repeat="-1"/>
+  </transition>
+</component>

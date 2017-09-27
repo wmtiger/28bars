@@ -14,12 +14,12 @@
 	],
 	"game": [
 		"bin-debug/game/fightgrid/avatar/Avatar.js",
+		"bin-debug/framework/ModuleProxy.js",
 		"bin-debug/framework/ModuleStartup.js",
 		"bin-debug/game/fightgrid/avatar/Warrior.js",
 		"bin-debug/game/gameobjs/mj/MjTile.js",
 		"bin-debug/base/Network.js",
 		"bin-debug/base/UI.js",
-		"bin-debug/framework/ModuleProxy.js",
 		"bin-debug/game/fightgrid/avatar/enemies/DesertArcher.js",
 		"bin-debug/base/Const.js",
 		"bin-debug/comp/CyclicAccelerator.js",
@@ -43,7 +43,7 @@
 		"bin-debug/game/fightgrid/avatar/cmds/AtkCmd.js",
 		"bin-debug/game/fightgrid/avatar/enemies/Brigand.js",
 		"bin-debug/game/fightgrid/avatar/enemies/DarkKnight.js",
-		"bin-debug/utils/XmlUtils.js",
+		"bin-debug/base/Config.js",
 		"bin-debug/game/fightgrid/avatar/enemies/DesertRaider.js",
 		"bin-debug/game/fightgrid/avatar/enemies/DesertScorpion.js",
 		"bin-debug/game/fightgrid/avatar/enemies/DesertThug.js",
@@ -72,6 +72,6 @@
 		"bin-debug/utils/StartupUtils.js",
 		"bin-debug/utils/TimeUtil.js",
 		"bin-debug/utils/WebUtils.js",
-		"bin-debug/base/Config.js"
+		"bin-debug/utils/XmlUtils.js"
 	]
 }

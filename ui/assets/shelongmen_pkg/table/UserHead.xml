@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="272,90">
+  <displayList>
+    <image id="n18_kjo6" name="n18" src="dbmm2h" xy="0,0"/>
+    <image id="n19_kjo6" name="n19" src="dbmm2i" xy="5,5" size="80,80" aspect="true"/>
+    <text id="n20_kjo6" name="n20" xy="98,10" size="160,34" font="微软雅黑" fontSize="22" color="#ffffff" vAlign="middle" autoSize="none" text="疯狂的下注"/>
+    <text id="n21_kjo6" name="n21" xy="98,48" size="160,34" font="微软雅黑" fontSize="22" color="#ffcc66" vAlign="middle" autoSize="none" text="213.5万"/>
+  </displayList>
+</component>

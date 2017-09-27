@@ -1,0 +1,16 @@
+info creator=UIBuilder
+common xadvance=18
+char id=19975 img=dbmmt xoffset=0 yoffset=0 xadvance=30
+char id=20159 img=dbmmu xoffset=0 yoffset=0 xadvance=30
+char id=21315 img=dbmmv xoffset=0 yoffset=0 xadvance=30
+char id=46 img=dbmmw xoffset=0 yoffset=0 xadvance=12
+char id=48 img=dbmmx xoffset=0 yoffset=0 xadvance=0
+char id=49 img=dbmmy xoffset=0 yoffset=0 xadvance=0
+char id=50 img=dbmmz xoffset=0 yoffset=0 xadvance=0
+char id=51 img=dbmm10 xoffset=0 yoffset=0 xadvance=0
+char id=52 img=dbmm11 xoffset=0 yoffset=0 xadvance=0
+char id=53 img=dbmm12 xoffset=0 yoffset=0 xadvance=0
+char id=54 img=dbmm13 xoffset=0 yoffset=0 xadvance=0
+char id=55 img=dbmm14 xoffset=0 yoffset=0 xadvance=0
+char id=56 img=dbmm15 xoffset=0 yoffset=0 xadvance=0
+char id=57 img=dbmm16 xoffset=0 yoffset=0 xadvance=0

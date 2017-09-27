@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="720,119">
+  <displayList>
+    <image id="n0_kjo6" name="n0" src="dbmm1w" xy="1,0" locked="true"/>
+    <image id="n1_kjo6" name="n1" src="dbmm1w" xy="360,0" locked="true" flip="hz"/>
+    <component id="n2_kjo6" name="chip0" src="dbmm6" xy="20,12"/>
+    <component id="n3_kjo6" name="chip1" src="dbmm7" xy="136,12"/>
+    <component id="n4_kjo6" name="chip2" src="dbmm8" xy="252,12"/>
+    <component id="n5_kjo6" name="chip3" src="dbmm9" xy="368,12"/>
+    <component id="n6_kjo6" name="chip4" src="dbmma" xy="484,12"/>
+    <component id="n8_kjo6" name="selected" src="dbmm1y" xy="5,-3" blend="add"/>
+    <component id="n10_dbmm" name="btnStart" src="dbmm36" xy="600,12"/>
+    <component id="n11_dbmm" name="btnFanpai" src="dbmm37" xy="600,12" hideByEditor="true"/>
+  </displayList>
+</component>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="80,70" extention="Button">
+  <displayList>
+    <text id="n22_kjo6" name="n22" xy="0,0" size="80,70" font="微软雅黑" fontSize="24" color="#ffcc33" align="center" vAlign="middle" autoSize="none" text="坐下"/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue="0.95"/>
+</component>

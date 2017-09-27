@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="720,119">
+  <displayList>
+    <image id="n4_kjo6" name="n4" src="dbmm1w" xy="1,0" locked="true" flip="vt"/>
+    <image id="n5_kjo6" name="n5" src="dbmm1w" xy="360,0" locked="true" flip="both"/>
+  </displayList>
+</component>

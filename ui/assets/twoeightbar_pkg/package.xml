@@ -109,6 +109,8 @@
     <component id="kjo62y" name="BetChip.xml" path="/table/" exported="true"/>
     <component id="dbmm30" name="BetAreaLR.xml" path="/table/"/>
     <component id="dbmm31" name="betAreaMiddle.xml" path="/table/"/>
+    <component id="dbmm32" name="BtnOther.xml" path="/table/"/>
+    <component id="dbmm33" name="SelectedLight.xml" path="/table/"/>
   </resources>
   <publish name="twoeightbar_pkg" path="E:\development\proj\mywork\28bars\28bars_egret\resource\assets\teb" excluded="kjo60,kjo6i"/>
 </packageDescription>

@@ -8,7 +8,7 @@
     <component id="n3_kjo6" name="rewardPool" src="kjo619" xy="490,150"/>
     <component id="n6_kjo6" name="betTime" src="kjo616" xy="511,198"/>
     <image id="n7_kjo6" name="n7" src="kjo6n" xy="10,631"/>
-    <image id="n10_kjo6" name="n10" src="kjo6x" xy="1106,10"/>
+    <component id="n10_kjo6" name="btnOther" src="dbmm32" xy="1106,10"/>
     <image id="n11_kjo6" name="n11" src="kjo6v" xy="10,10"/>
     <image id="n12_kjo6" name="n12" src="kjo6t" xy="100,10"/>
     <image id="n13_kjo6" name="n13" src="kjo6r" xy="1196,10"/>
@@ -44,9 +44,9 @@
     <movieclip id="n45_kjo6" name="mv4" src="kjo62c" xy="840,231" playing="false"/>
     <movieclip id="n48_kjo6" name="mv7" src="kjo62c" xy="636,6" playing="false"/>
     <movieclip id="n47_kjo6" name="mv6" src="kjo62c" xy="570,6" playing="false"/>
-    <text id="n50_kjo6" name="point0" xy="295,295" size="140,56" font="ui://e3t3gyefkjo62u" fontSize="12" align="center" vAlign="middle" autoSize="none" text="豹子"/>
-    <text id="n51_kjo6" name="point1" xy="570,395" size="140,56" font="ui://e3t3gyefkjo62u" fontSize="12" align="center" vAlign="middle" autoSize="none" text="豹子"/>
-    <text id="n52_kjo6" name="point2" xy="840,295" size="140,56" font="ui://e3t3gyefkjo62u" fontSize="12" align="center" vAlign="middle" autoSize="none" text="豹子"/>
+    <text id="n50_kjo6" name="point0" xy="295,195" size="140,56" font="ui://e3t3gyefkjo62u" fontSize="12" align="center" vAlign="middle" autoSize="none" text="豹子"/>
+    <text id="n51_kjo6" name="point1" xy="570,295" size="140,56" font="ui://e3t3gyefkjo62u" fontSize="12" align="center" vAlign="middle" autoSize="none" text="豹子"/>
+    <text id="n52_kjo6" name="point2" xy="840,195" size="140,56" font="ui://e3t3gyefkjo62u" fontSize="12" align="center" vAlign="middle" autoSize="none" text="豹子"/>
     <text id="n53_kjo6" name="point3" xy="570,70" size="140,56" font="ui://e3t3gyefkjo62u" fontSize="12" align="center" vAlign="middle" autoSize="none" text="豹子"/>
     <component id="n58_dbmm" name="betAreaRight" src="dbmm30" xy="870,270" locked="true" alpha="0"/>
     <component id="n59_dbmm" name="betAreaLeft" src="dbmm30" xy="150,270" size="260,270" locked="true" alpha="0"/>

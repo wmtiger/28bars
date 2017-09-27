@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="258,61">
+  <displayList>
+    <image id="n6_kjo6" name="n6" src="dbmm25" xy="0,18"/>
+    <image id="n9_kjo6" name="n9" src="dbmm26" xy="223,12" size="35,36" aspect="true"/>
+    <text id="n10_kjo6" name="txt" xy="9,19" size="200,24" font="微软雅黑" fontSize="14" color="#66ff99" align="center" vAlign="middle" autoSize="none" text="开始下注......10秒"/>
+  </displayList>
+</component>

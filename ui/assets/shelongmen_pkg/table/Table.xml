@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720">
+  <displayList>
+    <image id="n0_kjo6" name="n0" src="dbmm1s" xy="0,0" locked="true"/>
+    <component id="n2_kjo6" name="betBar" src="dbmm1x" xy="280,601"/>
+    <component id="n3_kjo6" name="rewardPool" src="dbmm20" xy="490,20"/>
+    <image id="n11_kjo6" name="n11" src="dbmm2a" xy="10,10"/>
+    <image id="n12_kjo6" name="n12" src="dbmm2b" xy="100,10"/>
+    <image id="n13_kjo6" name="n13" src="dbmm2c" xy="1196,10"/>
+    <component id="n18_kjo6" name="myHead" src="dbmm2g" xy="1008,630"/>
+    <component id="n58_dbmm" name="betAreaRight" src="dbmm2m" xy="870,270" locked="true" alpha="0"/>
+    <component id="n59_dbmm" name="betAreaLeft" src="dbmm2m" xy="150,270" size="260,270" locked="true" alpha="0"/>
+    <component id="n60_dbmm" name="betAreaMiddle" src="dbmm2n" xy="445,390" locked="true" alpha="0"/>
+  </displayList>
+</component>

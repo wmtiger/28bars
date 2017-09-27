@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="300,49">
+  <displayList>
+    <image id="n3_kjo6" name="n3" src="dbmm21" xy="0,0" size="300,49"/>
+    <image id="n4_kjo6" name="n4" src="dbmm22" xy="3,4" size="39,40" aspect="true"/>
+    <image id="n5_kjo6" name="n5" src="dbmm23" xy="45,10"/>
+    <text id="n6_kjo6" name="txt" xy="115,7" size="170,35" font="ui://5ek2jxccdbmms" fontSize="12" align="right" autoSize="none" text="0"/>
+  </displayList>
+</component>

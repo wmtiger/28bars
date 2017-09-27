@@ -62,6 +62,7 @@ module twoeightbar {
 		betChip3: fairygui.GButton;
 		betChip4: fairygui.GButton;
 		betRebuy: fairygui.GButton;
+		betSelected: fairygui.GComponent;
 
 		mvLightLeft: fairygui.GMovieClip;
 		mvLightMiddle: fairygui.GMovieClip;
@@ -78,17 +79,20 @@ module twoeightbar {
 		mjPoints: fairygui.GTextField[];
 
 		players: fairygui.GComponent[];
+		btnOther: fairygui.GButton;
 
 		betTime: fairygui.GComponent;
 		betTimeStamp: number;
 		rewardPool: fairygui.GComponent;
+		rewardPoolValue: number = 0;
 
-		cards: mj.MjData[];
+		cards: mj.MjData[];// 每次开局重新洗牌，取前8张
 
 		betChips: BetChip[];
 		mySelectedBet: number = 0;// 我选中的下注尺度
 
 		myHead: fairygui.GComponent;
+		dealHead: fairygui.GImage;
 
 		crtState: number = 4;
 
@@ -103,6 +107,7 @@ module twoeightbar {
 
 		onUpdate() {
 			this.flushBetTime();
+			this.flushRewardPool();
 		}
 
 		protected flushBetTime() {
@@ -122,37 +127,76 @@ module twoeightbar {
 			if (betNum > 0) {
 				if (from >= 0 && from < 8) {
 					// sit中玩家
+					let player = this.players[from];
+					this.flyBet(player.x + 50, player.y + 50, from, betNum, targetId)
 				} else if (from == 8) {
 					// mine
-					this.flyBet(this.myHead.x + 20, this.myHead.y + 20, targetId)
+					this.flyBet(this.myHead.x + 50, this.myHead.y + 50, from, betNum, targetId)
 				} else if (from >= 9) {
 					// other
+					this.flyBet(this.btnOther.x + 30, this.btnOther.y + 30, from, betNum, targetId)
 				}
+				this.rewardPoolValue += this.getBetNum(betNum);
 			} else {
 				// rebuy
+				this.clearChipByFrom(from);
 			}
 		}
-		flyBet(x, y, targetId: number) {
+		flyBet(x, y, from, num: number, targetId: number) {
 			let tox, toy;
 			if (targetId == 0) {
 				//中
 				tox = 170 + 210 * Math.random();
 				toy = 330 + 150 * Math.random();
-			}else if (targetId == 1) {
+			} else if (targetId == 1) {
 				//发
 				tox = 460 + 350 * Math.random();
 				toy = 410 + 150 * Math.random();
-			}else if (targetId == 2) {
+			} else if (targetId == 2) {
 				//白
 				tox = 870 + 210 * Math.random();
 				toy = 330 + 150 * Math.random();
 			}
-			let chip = new BetChip();
-			this.view.addChild(chip.view);
-			this.betChips.push(chip);
-			egret.Tween.get(chip.view)
-				.set({ x: x, y: y, scaleX: 0.3, scaleY: 0.3 })
-				.to({ x:tox, y:toy, scaleX:1, scaleY:1}, 300, egret.Ease.sineOut);
+			for (let i = 0; i < num; i++) {
+				let chip = new BetChip();
+				chip.from = from;
+				chip.targetId = targetId;
+				this.view.addChild(chip.view);
+				this.betChips.push(chip);
+				egret.Tween.get(chip.view)
+					.set({ x: x, y: y, scaleX: 0.3, scaleY: 0.3 })
+					.to({ x: tox, y: toy, scaleX: 1, scaleY: 1 }, 300, egret.Ease.sineOut)
+			}
+		}
+		protected clearChipByFrom(from) {
+			let len = this.betChips.length;
+			for (var i = len - 1; i >= 0; i--) {
+				var chip = this.betChips[i];
+				if (chip.from === from) {
+					let dc = this.betChips.splice(i, 1)[0];
+					dc.view.removeFromParent();
+				}
+			}
+		}
+		protected flushRewardPool() {
+			if (STATE.BET_TIME == this.crtState) {
+				this.rewardPool.getChild('txt').text = '' + this.rewardPoolValue;
+			}
+		}
+		protected getBetNum(bet) {
+			let num = 0;
+			if (bet == 1) {
+				num = 100;
+			} else if (bet == 2) {
+				num = 1000;
+			} else if (bet == 3) {
+				num = 10000;
+			} else if (bet == 4) {
+				num = 100000;
+			} else if (bet == 5) {
+				num = 1000000;
+			}
+			return num;
 		}
 
 		protected dealCard() {
@@ -209,6 +253,7 @@ module twoeightbar {
 				mj2.addChild(img);
 				setTimeout(() => {
 					this.showPoint(idx);
+					this.pointShowOver();
 				}, 200);
 			})
 			mv2.playing = true;
@@ -230,7 +275,79 @@ module twoeightbar {
 		}
 
 		protected settle() {
-
+			// 依次判断庄家是否胜利，相同点数，庄家赢
+			let dealer = this.getCard(3);
+			let card0 = this.getCard(0);
+			let card1 = this.getCard(1);
+			let card2 = this.getCard(2);
+			let dealerIdx = getTwoEightBarProxy().getBipaiIdx(dealer);
+			let card0Idx = getTwoEightBarProxy().getBipaiIdx(card0);
+			let card1Idx = getTwoEightBarProxy().getBipaiIdx(card1);
+			let card2Idx = getTwoEightBarProxy().getBipaiIdx(card2);
+			if (dealerIdx <= card0Idx) {
+				this.moneyFly(0, 0)
+			} else {
+				this.moneyFly(0, 1)
+			}
+			if (dealerIdx <= card1Idx) {
+				this.moneyFly(1, 0)
+			} else {
+				this.moneyFly(1, 1)
+			}
+			if (dealerIdx <= card2Idx) {
+				this.moneyFly(2, 0)
+			} else {
+				this.moneyFly(2, 1)
+			}
+			if (this.betChips.length <= 0) {
+				setTimeout(() => {
+					this.setState(STATE.RESET);
+				}, 1000);
+			}
+		}
+		protected getCard(idx) {
+			idx *= 2;
+			let mjd = this.cards[idx];
+			let mjd2 = this.cards[idx + 1];
+			if (mjd.num >= mjd2.num) {
+				return mjd.num + ',' + mjd2.num;
+			}
+			return mjd2.num + ',' + mjd.num;
+		}
+		/** from等于之前的targetId; to=0为庄家,to>0则从chip中的from返回 */
+		protected moneyFly(from, to) {
+			let tox, toy;
+			if (to == 0) {
+				tox = this.dealHead.x + 50;
+				toy = this.dealHead.y + 50;
+			}
+			let len = this.betChips.length;
+			for (var i = len - 1; i >= 0; i--) {
+				var chip = this.betChips[i];
+				if (chip.targetId === from) {
+					let fc = this.betChips.splice(i, 1)[0];
+					if (to > 0) {
+						if (fc.from >= 0 && fc.from < 8) {
+							let player = this.players[from];
+							tox = player.x + 50;
+							toy = player.y + 50;
+						} else if (fc.from == 8) {
+							tox = this.myHead.x + 50;
+							toy = this.myHead.y + 50;
+						} else if (fc.from == 9) {
+							tox = this.btnOther.x + 30;
+							toy = this.btnOther.y + 30;
+						}
+					}
+					egret.Tween.get(fc.view).to({ x: tox, y: toy, scaleX: 0.3, scaleY: 0.3 }, 500, egret.Ease.sineOut)
+						.call(() => {
+							fc.view.removeFromParent();
+							setTimeout(() => {
+								this.setState(STATE.RESET)
+							}, 1000);
+						});
+				}
+			}
 		}
 
 		setState(state) {
@@ -276,6 +393,7 @@ module twoeightbar {
 			this.betChip3 = this.getChild('betBar.chip3').asButton;
 			this.betChip4 = this.getChild('betBar.chip4').asButton;
 			this.betRebuy = this.getChild('betBar.rebuy').asButton;
+			this.betSelected = this.getChild('betBar.selected').asCom;
 
 			this.mvLightLeft = this.getChild('lightLeft').asMovieClip;
 			this.mvLightMiddle = this.getChild('lightMiddle').asMovieClip;
@@ -288,7 +406,9 @@ module twoeightbar {
 			this.betTime = this.getChild('betTime').asCom;
 			this.rewardPool = this.getChild('rewardPool').asCom;
 
+			this.dealHead = this.getChild('dealHead').asImage;
 			this.myHead = this.getChild('myHead').asCom;
+			this.btnOther = this.getChild('btnOther').asButton;
 
 			this.mjViewXYs = [];
 			this.mjViews = [];
@@ -336,6 +456,7 @@ module twoeightbar {
 				mjmv.width = 36;
 				mjmv.height = 53;
 				mjmv.visible = true;
+				mjmv.playing = false;
 				mjmv.x = 574 + Math.floor(i / 2) * 31;
 				mjmv.y = 258 + (i % 2) * 12;
 			}
@@ -355,12 +476,15 @@ module twoeightbar {
 				element.view.removeFromParent();
 			}
 			this.betChips = [];
+			this._mjDealCnt = 0;
+			this._pointOverCnt = 0;
+			this.rewardPoolValue = 0;
 
 			this.start()
 		}
 
 		start(): void {
-			this.betTimeStamp = utils.getCrtTimeStamp() + 1000 * 3;
+			this.betTimeStamp = utils.getCrtTimeStamp() + 1000 * 8;
 			this.setState(STATE.BET_TIME)
 		}
 
@@ -368,30 +492,43 @@ module twoeightbar {
 			switch (target) {
 				case this.betChip0:
 					this.mySelectedBet = 0;
+					this.betSelected.x = 5;
 					break;
 				case this.betChip1:
 					this.mySelectedBet = 1;
+					this.betSelected.x = 121;
 					break;
 				case this.betChip2:
 					this.mySelectedBet = 2;
+					this.betSelected.x = 237;
 					break;
 				case this.betChip3:
 					this.mySelectedBet = 3;
+					this.betSelected.x = 353;
 					break;
 				case this.betChip4:
 					this.mySelectedBet = 4;
+					this.betSelected.x = 469;
 					break;
 				case this.betRebuy:
-					this.doBet(8, -1);
+					if (STATE.BET_TIME == this.crtState) {
+						this.doBet(8, -1);
+					}
 					break;
 				case this.betAreaLeft:
-					this.doBet(8, this.mySelectedBet + 1, 0);
+					if (STATE.BET_TIME == this.crtState) {
+						this.doBet(8, this.mySelectedBet + 1, 0);
+					}
 					break;
 				case this.betAreaMiddle:
-					this.doBet(8, this.mySelectedBet + 1, 1);
+					if (STATE.BET_TIME == this.crtState) {
+						this.doBet(8, this.mySelectedBet + 1, 1);
+					}
 					break;
 				case this.betAreaRight:
-					this.doBet(8, this.mySelectedBet + 1, 2);
+					if (STATE.BET_TIME == this.crtState) {
+						this.doBet(8, this.mySelectedBet + 1, 2);
+					}
 					break;
 			}
 		}

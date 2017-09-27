@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="5ek2jxcc" jpegQuality="80" compressPNG="true">
+  <resources>
+    <image id="dbmm0" name="texasbattle_bet_chip_button_up_5.png" path="/chip/"/>
+    <image id="dbmm1" name="texasbattle_bet_chip_button_up_rebet.png" path="/chip/"/>
+    <image id="dbmm2" name="texasbattle_bet_chip_button_up_1.png" path="/chip/"/>
+    <image id="dbmm3" name="texasbattle_bet_chip_button_up_2.png" path="/chip/"/>
+    <image id="dbmm4" name="texasbattle_bet_chip_button_up_3.png" path="/chip/"/>
+    <image id="dbmm5" name="texasbattle_bet_chip_button_up_4.png" path="/chip/"/>
+    <component id="dbmm6" name="Chip1.xml" path="/chip/"/>
+    <component id="dbmm7" name="Chip2.xml" path="/chip/"/>
+    <component id="dbmm8" name="Chip3.xml" path="/chip/"/>
+    <component id="dbmm9" name="Chip4.xml" path="/chip/"/>
+    <component id="dbmma" name="Chip5.xml" path="/chip/"/>
+    <component id="dbmmb" name="Chip6.xml" path="/chip/"/>
+    <image id="dbmmc" name="majiang_type_0_10.png" path="/font/point/"/>
+    <image id="dbmmd" name="majiang_type_0_11.png" path="/font/point/"/>
+    <image id="dbmme" name="majiang_type_0_12.png" path="/font/point/"/>
+    <image id="dbmmf" name="majiang_type_0_13.png" path="/font/point/"/>
+    <image id="dbmmg" name="majiang_type_0_14.png" path="/font/point/"/>
+    <image id="dbmmh" name="majiang_type_0_15.png" path="/font/point/"/>
+    <image id="dbmmi" name="majiang_type_0_01.png" path="/font/point/"/>
+    <image id="dbmmj" name="majiang_type_0_02.png" path="/font/point/"/>
+    <image id="dbmmk" name="majiang_type_0_03.png" path="/font/point/"/>
+    <image id="dbmml" name="majiang_type_0_04.png" path="/font/point/"/>
+    <image id="dbmmm" name="majiang_type_0_05.png" path="/font/point/"/>
+    <image id="dbmmn" name="majiang_type_0_06.png" path="/font/point/"/>
+    <image id="dbmmo" name="majiang_type_0_07.png" path="/font/point/"/>
+    <image id="dbmmp" name="majiang_type_0_08.png" path="/font/point/"/>
+    <image id="dbmmq" name="majiang_type_0_09.png" path="/font/point/"/>
+    <font id="dbmmr" name="PointFont.fnt" path="/font/point/"/>
+    <font id="dbmms" name="RewardPoolFont.fnt" path="/font/rewardpool/" exported="true"/>
+    <image id="dbmmt" name="19975.png" path="/font/rewardpool/"/>
+    <image id="dbmmu" name="20159.png" path="/font/rewardpool/"/>
+    <image id="dbmmv" name="21315.png" path="/font/rewardpool/"/>
+    <image id="dbmmw" name="46.png" path="/font/rewardpool/"/>
+    <image id="dbmmx" name="48.png" path="/font/rewardpool/"/>
+    <image id="dbmmy" name="49.png" path="/font/rewardpool/"/>
+    <image id="dbmmz" name="50.png" path="/font/rewardpool/"/>
+    <image id="dbmm10" name="51.png" path="/font/rewardpool/"/>
+    <image id="dbmm11" name="52.png" path="/font/rewardpool/"/>
+    <image id="dbmm12" name="53.png" path="/font/rewardpool/"/>
+    <image id="dbmm13" name="54.png" path="/font/rewardpool/"/>
+    <image id="dbmm14" name="55.png" path="/font/rewardpool/"/>
+    <image id="dbmm15" name="56.png" path="/font/rewardpool/"/>
+    <image id="dbmm16" name="57.png" path="/font/rewardpool/"/>
+    <image id="dbmm1s" name="majiang_desk_bg.png" path="/table/"/>
+    <component id="dbmm1t" name="Table.xml" path="/table/" exported="true"/>
+    <image id="dbmm1u" name="majiang_bet_area_bg.png" path="/table/"/>
+    <component id="dbmm1v" name="DealBar.xml" path="/table/"/>
+    <image id="dbmm1w" name="majiang_dealer_bg.png" path="/table/"/>
+    <component id="dbmm1x" name="ChipBar.xml" path="/table/"/>
+    <component id="dbmm1y" name="SelectedLight.xml" path="/table/"/>
+    <image id="dbmm1z" name="texasbattle_bet_chip_button_light.png" path="/table/"/>
+    <component id="dbmm20" name="RewardPool.xml" path="/table/"/>
+    <image id="dbmm21" name="majiang_pool_bg.png" path="/table/" scale="9grid" scale9grid="67,13,134,26"/>
+    <image id="dbmm22" name="texasbattle_chip_icon.png" path="/table/"/>
+    <image id="dbmm23" name="texasbattle_award_pool_desc.png" path="/table/"/>
+    <component id="dbmm24" name="BetTime.xml" path="/table/"/>
+    <image id="dbmm25" name="majiang_bet_progress_bg.png" path="/table/"/>
+    <image id="dbmm26" name="majiang_progress_icon.png" path="/table/"/>
+    <image id="dbmm27" name="majiang_chat_btn_up.png" path="/table/"/>
+    <component id="dbmm28" name="BtnOther.xml" path="/table/"/>
+    <image id="dbmm29" name="majiang_player_btn_up.png" path="/table/"/>
+    <image id="dbmm2a" name="majiang_menu_btn_up.png" path="/table/"/>
+    <image id="dbmm2b" name="majiang_help_btn_up.png" path="/table/"/>
+    <image id="dbmm2c" name="majiang_record_btn_up.png" path="/table/"/>
+    <image id="dbmm2d" name="flatChatOn.png" path="/table/"/>
+    <movieclip id="dbmm2e" name="BetLightLR.jta" path="/table/"/>
+    <movieclip id="dbmm2f" name="BetLightM.jta" path="/table/"/>
+    <component id="dbmm2g" name="UserHead.xml" path="/table/"/>
+    <image id="dbmm2h" name="majiang_user_bg.png" path="/table/"/>
+    <image id="dbmm2i" name="defualt.png" path="/table/"/>
+    <component id="dbmm2j" name="PlayerSit.xml" path="/table/"/>
+    <image id="dbmm2k" name="majiang_sit_bg.png" path="/table/"/>
+    <component id="dbmm2l" name="BtnSit.xml" path="/table/"/>
+    <component id="dbmm2m" name="BetAreaLR.xml" path="/table/"/>
+    <component id="dbmm2n" name="betAreaMiddle.xml" path="/table/"/>
+    <image id="dbmm2o" name="majiang_bet_light_22.png" path="/table/"/>
+    <image id="dbmm2p" name="majiang_bet_light_11.png" path="/table/"/>
+    <image id="dbmm2q" name="majiang_bet_light_12.png" path="/table/"/>
+    <image id="dbmm2r" name="majiang_bet_light_21.png" path="/table/"/>
+    <image id="dbmm2s" name="majiang_chat_btn_down.png" path="/table/"/>
+    <image id="dbmm2t" name="flatChatOff.png" path="/table/"/>
+    <image id="dbmm2u" name="majiang_help_btn_down.png" path="/table/"/>
+    <image id="dbmm2v" name="majiang_menu_btn_down.png" path="/table/"/>
+    <image id="dbmm2w" name="majiang_player_btn_down.png" path="/table/"/>
+    <image id="dbmm2x" name="majiang_record_btn_down.png" path="/table/"/>
+    <image id="dbmm2y" name="texasbattle_dealer_logo.png" path="/table/"/>
+    <image id="dbmm2z" name="majiang_full_win.png" path="/table/"/>
+    <image id="dbmm30" name="majiang_full_lose.png" path="/table/"/>
+    <component id="dbmm31" name="BetChip.xml" path="/table/"/>
+    <image id="dbmm33" name="bet_chip_queding.png" path="/chip/"/>
+    <image id="dbmm34" name="bet_chip_fanpai.png" path="/chip/"/>
+    <image id="dbmm35" name="bet_chip_kaishi.png" path="/chip/"/>
+    <component id="dbmm36" name="ChipStart.xml" path="/chip/"/>
+    <component id="dbmm37" name="ChipFanpai.xml" path="/chip/"/>
+    <image id="dbmm39" name="cardback_big.png" path="/card/"/>
+    <component id="dbmm3a" name="Card.xml" path="/card/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>
